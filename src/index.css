@@ -1,13 +1,243 @@
-body {
+*, *:before, *:after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --bg-color: #fafafa;
+  --bg-gradient: linear-gradient {
+    105deg,
+    rgba(184, 293, 237, 1) 0%,
+    rgba(222, 245, 221, 1) 100%
+  };
+  --bg-border: linear-gradient{
+    98deg,
+    rgba(124, 166, 252, 1) 0%,
+    rgba(119, 235, 129, 1) 100%
+  };
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  margin: 0;
+  margin-bottom: 82px;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.app main {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-around  !important;
+  gap: 10px !important;
+}
+
+#navHeader {
+  position: block;
+  width: 100%;
+}
+
+#poke-logo-header {
+  width: 150px;
+}
+
+#inputBuscarPoke {
+  width: 250px;
+}
+
+#footer-footer {
+  padding-top: 7px;
+  background-color: #0d6efd;
+  position: fixed;
+  bottom: 0;
+}
+
+.col-4, .col-4 > .links-footer {
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.links-footer > img {
+  width: 50px;
+}
+
+.card {
+  width: 10rem;
+  text-align: center;
+}
+
+@media (max-width: 440px) {
+  #poke-logo-header {
+    width: 100px;
+  }
+  
+  #inputBuscarPoke {
+    width: 200px;
+  }
+}
+
+.listItem {
+  display: flex;
+  border-bottom: 3px solid #e4e4e4;
+  padding: 10px;
+  text-decoration: none;
+  align-items: center;
+}
+
+.listItem > :first-child {
+  margin-right: 15px;
+}
+
+.listItem > :last-child {
+  margin: 0;
+}
+
+.listItemIcon {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.listItemText {
+  flex-grow: 2;
+}
+
+.listItemText > :first-child {
+  color: rgba(124, 166, 252, 1);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 11px;
+  font-weight: bold;
+}
+
+.listItemText > :last-child {
+  color: grey;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  display: block;
+}
+
+@media (max-width: 340px) {
+  #poke-logo-header {
+    width: 90px;
+  }
+  
+  #inputBuscarPoke {
+    width: 180px;
+  }
+}
+
+@media (max-width: 310px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 180px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 240px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 160px;
+    margin: 0 auto;
+  }
+
+  .links-footer {
+    font-size: 12px;
+  }
+
+  .links-footer > img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 200px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 180px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 140px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 160px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 110px;
+    margin: 0 auto;
+  }
+  
+  .links-footer {
+    font-size: 10px;
+  }
+
+  .links-footer > img {
+    width: 35px;
+  }
+}
+
+@media (max-width: 140px) {
+  #poke-logo-header {
+    width: 90px;
+    margin: 0 auto;
+  }
+  
+  #inputBuscarPoke {
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  #inputBuscarPoke::placeholder { font-weight: bold; }
+
+  .links-footer {
+    font-size: 9px;
+  }
+
+  .links-footer > img {
+    width: 30px;
+  }
 }
