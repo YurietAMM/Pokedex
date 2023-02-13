@@ -27,31 +27,28 @@ const Pokemons = (): JSX.Element => {
     return <LoadingScreen />;
   }
 
+  const filtterPokemons = pokemons?.slice(0, 649).filter((pokemon) => 
+  {return pokemon.name.toLowerCase().match(query.toLowerCase())}
+  );
+
   return (
-    <div>
+    <div id='divAllScreenPokemons'>
       <Header query={query} setQuery={setQuery} />
+      <br />
+      <br />
+      <br />
+      <br />
       <main>
-      {pokemons.slice(0, 649).map((pokemon) => (
-        // <Link key={pokemon.id} className='listItem' to={`/pokemon/${pokemon.name.toLowerCase()}`}>
-        //   <img className='listItemIcon' src={pokemon.imgSrc} alt="pokemon" />
-        //   <div className='listItemText'>
-        //     <span>{pokemon.name}</span>
-        //     <span>{pokemon.id}</span>
-        //   </div>
-        // </Link>
-        <div key={pokemon.id} className="card">
-          <center><img src={pokemon.imgSrc} className="card-img-top listItemIcon" alt={pokemon.name} /></center>
-          <div className="card-body listItemText">
+      {filtterPokemons.slice(0, 649).map((pokemon) => (
+        <div key={pokemon.id} className="card animate__animated animate__fadeInLeft">
+          <center><img src={pokemon.imgSrc} className="card-img-top" alt={pokemon.name} /></center>
+          <div className="card-body">
             <h5 className="card-title">{pokemon.name}</h5>
             <p className="card-text">{pokemon.id}</p>
-            <Link to={`/pokemon/${pokemon.name.toLowerCase()}`}>Ver</Link>
+            <Link to={`/pokemon/${pokemon.name.toLowerCase()}`}>Más Información</Link>
           </div>
         </div>
 ))}
-
-
-
-        
       </main>
       <Footer />
     </div>

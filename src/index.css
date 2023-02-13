@@ -35,19 +35,21 @@ body {
   min-height: 100vh;
 }
 
-.app main {
-  height: 100%;
-  overflow: auto;
+.app > main {
+  width: 100%;
+  height: auto;
   padding: 20px;
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  justify-content: space-around  !important;
-  gap: 10px !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
 }
 
 #navHeader {
-  position: block;
+  position: fixed;
+  top: 0;
+  z-index: 10;
   width: 100%;
 }
 
@@ -79,8 +81,31 @@ body {
 }
 
 .card {
+  margin: 5px 15px;
+  height: 16em;
   width: 10rem;
   text-align: center;
+  float: left;
+}
+
+#divContainerImg {
+  place-items: center;
+}
+
+#loadingPokedex {
+  height: 50%;
+  width: 100%;
+  background: var(--bg-gradient);
+  top: 0px;
+}
+
+#loagingGif {
+  position: fixed;
+  height: 200px;
+  width: 200px;
+  top: 0;
+  z-index: 10;
+  right: 550px;
 }
 
 @media (max-width: 440px) {
@@ -109,17 +134,21 @@ body {
   margin: 0;
 }
 
-.listItemIcon {
+.card-img-top {
   width: 8rem;
   height: 8rem;
-  object-fit: contain;
 }
 
-.listItemText {
-  flex-grow: 2;
+.card-body {
+  color: black
 }
 
-.listItemText > :first-child {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-body > :first-child {
   color: rgba(124, 166, 252, 1);
   font-size: 1rem;
   display: block;
@@ -127,7 +156,7 @@ body {
   font-weight: bold;
 }
 
-.listItemText > :last-child {
+.card-body > :last-child {
   color: grey;
   font-weight: bolder;
   font-size: 0.8rem;
